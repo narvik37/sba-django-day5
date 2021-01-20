@@ -4,6 +4,19 @@ from .models import Members
 
 
 # Create your views here.
+
+def gugu(req):
+    num = req.GET.get('num', '')#get이 들어오면 num에 대입, 안들어오면 그대로
+    
+    return HttpResponse(f'<h1>{num_gugu(num)} </h1>')
+    return HttpResponse('123')
+
+def num_gugu(num):
+    str = ""
+    for i in range (1,10):
+        str += f"{num} * {i} = {int(num) * i}<br>"
+    return str
+
 def index(req):
     return HttpResponse("Hello World@@@")
 
