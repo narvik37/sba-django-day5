@@ -5,12 +5,15 @@ from .models import Members
 
 # Create your views here.
 def index(req):
-    return HttpResponse("Hello World!!!!!");
+    return HttpResponse("Hello World@@@")
+
+def git(req):
+    return HttpResponse("<h2>git version</h2>")
 
 def test(req):
-    return HttpResponse("<h1>hello</h1>");
+    return HttpResponse("<h1>hello</h1>")
 def test2(req):
-    return HttpResponse("<h1>test2</h1>");
+    return HttpResponse("<h1>test2</h1>")
 def signup(req):
     if req.method == 'POST':
         username = req.POST['username']
@@ -34,5 +37,5 @@ def signup(req):
         return render(req, 'index.html', res_data)
 
         print(req.POST['username'])
-    return render(req, 'index.html');
+    return render(req, 'index.html')
 
