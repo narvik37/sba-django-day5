@@ -5,7 +5,7 @@ from .models import Members
 
 # Create your views here.
 def index(req):
-    return HttpResponse("Hello World");
+    return HttpResponse("Hello World!!!!!");
 
 def test(req):
     return HttpResponse("<h1>hello</h1>");
