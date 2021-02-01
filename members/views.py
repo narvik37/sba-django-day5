@@ -4,8 +4,23 @@ from .models import Members
 
 
 # Create your views here.
+def a(req):
+    context = {"loop":range(1,32)}
+    return render(req, 'a.html', context)
+
 def login_after(req):
-    return HttpResponse("리다이렉션 성공")
+    user_id = req.session.get('user')
+
+    if user_id:
+        return HttpResponse(f"로그인 유저 {user_id}")
+
+    return redirect("/login")
+
+def logout(req):
+    if req.session.get('user'):
+        del(req.session['user'])
+
+    return redirect("/")
 
 def login(req):
     print(dir(req))
